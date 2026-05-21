@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { NAV_ITEMS } from '../data/portfolio';
+import React, { useState, useEffect } from "react";
+import { NAV_ITEMS } from "../data/portfolio";
 
 const Navbar: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<string>('home');
+  const [activeSection, setActiveSection] = useState<string>("home");
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = NAV_ITEMS.map((n) => n.href.replace('#', ''));
+      const sections = NAV_ITEMS.map((n) => n.href.replace("#", ""));
       for (const id of [...sections].reverse()) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 120) {
@@ -16,21 +16,24 @@ const Navbar: React.FC = () => {
         }
       }
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
     e.preventDefault();
     const target = document.querySelector(href);
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    if (target) target.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
   };
 
   return (
     <nav
       className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-[1280px] rounded-full border border-[#564338]/20 bg-[#131313]/70 backdrop-blur-xl flex justify-between items-center px-8 py-3 z-50 shadow-2xl"
-      style={{ maxWidth: '1280px' }}
+      style={{ maxWidth: "1280px" }}
     >
       {/* Logo */}
       <span className="font-headline text-2xl font-bold text-primary tracking-tighter cursor-pointer transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(255,182,141,0.8)]">
@@ -40,7 +43,7 @@ const Navbar: React.FC = () => {
       {/* Desktop Links */}
       <div className="hidden md:flex items-center gap-8">
         {NAV_ITEMS.map((item) => {
-          const id = item.href.replace('#', '');
+          const id = item.href.replace("#", "");
           const isActive = activeSection === id;
           return (
             <a
@@ -49,8 +52,8 @@ const Navbar: React.FC = () => {
               onClick={(e) => handleNavClick(e, item.href)}
               className={`font-body text-label uppercase tracking-wider transition-all duration-300 hover:scale-105 ${
                 isActive
-                  ? 'text-primary border-b border-primary/40 pb-1'
-                  : 'text-[#ddc1b3] hover:text-[#e5e2e1]'
+                  ? "text-primary border-b border-primary/40 pb-1"
+                  : "text-[#ddc1b3] hover:text-[#e5e2e1]"
               }`}
             >
               {item.label}
@@ -58,15 +61,6 @@ const Navbar: React.FC = () => {
           );
         })}
       </div>
-
-      {/* CTA */}
-      <a
-        href="#contact"
-        onClick={(e) => handleNavClick(e, '#contact')}
-        className="bg-[#ff8c42] text-[#6a2d00] px-6 py-2 rounded-full font-body text-label uppercase tracking-widest hover:shadow-[0_0_20px_rgba(255,182,141,0.4)] active:scale-95 transition-all duration-200 shadow-lg"
-      >
-        Hire Me
-      </a>
 
       {/* Mobile hamburger */}
       <button
@@ -80,9 +74,13 @@ const Navbar: React.FC = () => {
             className="block w-6 h-0.5 bg-primary transition-all duration-300"
             style={{
               transform:
-                menuOpen && i === 0 ? 'rotate(45deg) translate(4px, 4px)' :
-                menuOpen && i === 1 ? 'scaleX(0)' :
-                menuOpen && i === 2 ? 'rotate(-45deg) translate(4px, -4px)' : 'none',
+                menuOpen && i === 0
+                  ? "rotate(45deg) translate(4px, 4px)"
+                  : menuOpen && i === 1
+                    ? "scaleX(0)"
+                    : menuOpen && i === 2
+                      ? "rotate(-45deg) translate(4px, -4px)"
+                      : "none",
             }}
           />
         ))}
