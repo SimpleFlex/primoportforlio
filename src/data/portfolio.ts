@@ -19,82 +19,101 @@ export interface SkillCategory {
 export interface Project {
   title: string;
   description: string;
-  tags: string[];
   image: string;
+  tags: string[];
+  src: string;
+  github: string;
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const TECH_STACK: string[] = [
-  'React.js', 'Next.js', 'Node.js', 'TypeScript', 'MongoDB', 'Docker', 'AWS', 'GraphQL',
-  'React.js', 'Next.js', 'Node.js', 'TypeScript', 'MongoDB', 'Docker', 'AWS', 'GraphQL',
+  "React.js",
+  "Next.js",
+  "Node.js",
+  "TypeScript",
+  "MongoDB",
+  "Docker",
+  "AWS",
+  "GraphQL",
+  "React.js",
+  "Next.js",
+  "Node.js",
+  "TypeScript",
+  "MongoDB",
+  "Docker",
+  "AWS",
+  "GraphQL",
 ];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    icon: 'layers',
-    title: 'Frontend',
+    icon: "layers",
+    title: "Frontend",
     bars: [
-      { name: 'REACT / NEXT.JS', level: 98 },
-      { name: 'TYPESCRIPT', level: 95 },
-      { name: 'TAILWIND CSS', level: 100 },
+      { name: "REACT / NEXT.JS", level: 98 },
+      { name: "TYPESCRIPT", level: 95 },
+      { name: "TAILWIND CSS", level: 100 },
     ],
   },
   {
-    icon: 'dns',
-    title: 'Backend',
+    icon: "dns",
+    title: "Backend",
     bars: [
-      { name: 'NODE / EXPRESS', level: 92 },
-      { name: 'GRAPHQL', level: 85 },
-      { name: 'RESTful APIs', level: 96 },
+      { name: "NODE / EXPRESS", level: 92 },
+      { name: "GRAPHQL", level: 85 },
+      { name: "RESTful APIs", level: 96 },
     ],
   },
   {
-    icon: 'database',
-    title: 'Databases',
+    icon: "database",
+    title: "Databases",
     list: [
-      'MongoDB (Mongoose)',
-      'PostgreSQL (Prisma)',
-      'Redis Caching',
-      'Firebase',
+      "MongoDB (Mongoose)",
+      "PostgreSQL (Prisma)",
+      "Redis Caching",
+      "Firebase",
     ],
   },
   {
-    icon: 'construction',
-    title: 'Operations',
-    tags: ['DOCKER', 'AWS S3', 'CI/CD', 'GIT', 'KUBERNETES'],
+    icon: "construction",
+    title: "Operations",
+    tags: ["DOCKER", "AWS S3", "CI/CD", "GIT", "KUBERNETES"],
   },
 ];
 
 export const PROJECTS: Project[] = [
   {
-    title: 'Aether OS',
+    title: "John Enterprise Ecommerce Website",
     description:
-      'A virtual desktop environment built with React and WebGL, featuring window management and real-time state persistence.',
-    tags: ['NEXT.JS', 'WEBGL'],
-    image:
-      'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80',
+      "A full-stack ecommerce platform with product catalog, cart management, and worldwide gift delivery powered by a modern headless architecture.",
+    tags: ["NEXT.JS", "MONGODB", "TAILWIND"],
+    image: "/john.png",
+    src: "https://www.johnsenterprise.shop/",
+    github: "https://github.com/SimpleFlex/john-stores",
   },
   {
-    title: 'Neural Net Orchestrator',
+    title: "BOOSTERA",
     description:
-      'Automated deployment pipeline for machine learning models with real-time health monitoring and auto-scaling.',
-    tags: ['PYTHON', 'NODE.JS'],
-    image:
-      'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80',
+      "A Web3 marketing platform designed to amplify project visibility, grow on-chain audiences, and drive engagement across decentralized ecosystems.",
+    tags: ["NEXT.JS", "NODE.JS", "WEB3"],
+    image: "/boost.png",
+    src: "https://www.boost-era.fun/",
+    github: "https://github.com/SimpleFlex/boostera",
   },
   {
-    title: 'Omni-Vault Database',
+    title: "CASH CONNECT",
     description:
-      'A high-performance document store featuring military-grade encryption at rest and sub-millisecond query execution.',
-    tags: ['MONGODB', 'RUST'],
-    image:
-      'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80',
+      "A crypto finance platform enabling seamless buying, selling of digital assets, gift card trading, and cross-border money transfers.",
+    tags: ["POSTGRESQL", "TYPESCRIPT", "TAILWIND"],
+    image: "/cash.png",
+    src: "https://cash-connect-frontend.vercel.app/",
+    github: "https://github.com/Teqshure/Cash-Connect-Frontend",
   },
 ];

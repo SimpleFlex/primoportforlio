@@ -4,7 +4,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="px-5 md:px-6 max-w-[1280px] mx-auto reveal mt-12 md:mt-[120px]"
+      className="px-5 md:px-6 max-w-[1280px] mx-auto reveal mt-0 md:mt-[80px]"
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
         {/* ── MOBILE: Label + Heading above image ── */}

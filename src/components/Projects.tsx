@@ -1,5 +1,5 @@
-import React from 'react';
-import { PROJECTS, Project } from '../data/portfolio';
+import React from "react";
+import { PROJECTS, Project } from "../data/portfolio";
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
   <div className="group relative bg-[#0e0e0e] rounded-2xl border border-[#564338]/10 overflow-hidden hover:border-primary/40 transition-all duration-500">
@@ -21,17 +21,29 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
           </span>
         ))}
       </div>
-      <h3 className="font-headline font-semibold text-xl mb-2">{project.title}</h3>
+      <h3 className="font-headline font-semibold text-xl mb-2">
+        {project.title}
+      </h3>
       <p className="text-[#ddc1b3] font-body text-body-md line-clamp-2 mb-6">
         {project.description}
       </p>
       <div className="flex gap-4">
-        <button className="flex-1 bg-primary text-[#532200] py-3 rounded-lg font-body text-label uppercase tracking-wider text-center hover:opacity-90 transition-opacity">
+        <a
+          href={project.src}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 bg-primary text-[#532200] py-3 rounded-lg font-body text-label uppercase tracking-wider text-center hover:opacity-90 transition-opacity"
+        >
           Live Demo
-        </button>
-        <button className="w-12 h-12 flex items-center justify-center border border-[#564338] rounded-lg hover:bg-[#353534]/30 transition-all">
+        </a>
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 flex items-center justify-center border border-[#564338] rounded-lg hover:bg-[#353534]/30 transition-all"
+        >
           <span className="material-symbols-outlined text-[#e5e2e1]">code</span>
-        </button>
+        </a>
       </div>
     </div>
   </div>
@@ -41,7 +53,7 @@ const Projects: React.FC = () => (
   <section
     id="projects"
     className="px-5 md:px-6 max-w-[1280px] mx-auto reveal"
-    style={{ marginTop: '120px' }}
+    style={{ marginTop: "120px" }}
   >
     <div className="flex justify-between items-end mb-12">
       <div>
@@ -53,9 +65,10 @@ const Projects: React.FC = () => (
         </p>
       </div>
       <div className="hidden md:block h-px flex-grow mx-8 bg-[#564338]/20" />
-      <span className="font-code text-code-sm text-primary whitespace-nowrap">03 / PROJECTS</span>
+      <span className="font-code text-code-sm text-primary whitespace-nowrap">
+        03 / PROJECTS
+      </span>
     </div>
-
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {PROJECTS.map((p) => (
         <ProjectCard key={p.title} project={p} />
